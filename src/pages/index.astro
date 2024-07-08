@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro'
+import CustomButton from '../components/CustomButton.astro'
+import WorkExperienceCard from '../components/WorkExperienceCard.astro'
+---
+
+<Layout>
+	<main>
+		<section class="welcome-and-contact">
+			<h2>Welcome to my personal page</h2>
+			<h3>Full Stack Web Developer from Bilbao</h3>
+			<div class="contact-buttons">
+				<CustomButton title='Contact' icon='../../public/linkedin-icon.png' iconAlt='linkedin-logo' />
+				<CustomButton title='Linkedin' icon='../../public/linkedin-icon.png' iconAlt='linkedin-logo'/>
+			</div>
+		</section>
+		<section class="work-experience">
+			<h2>Work Experience</h2>
+			<article>
+				<WorkExperienceCard frontmatter='./assets/work-experience/arratek.md'/>
+			</article>
+		</section>
+	</main>
+</Layout>
+
+<style>
+
+</style>

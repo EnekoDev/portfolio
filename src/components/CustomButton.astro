@@ -1,0 +1,34 @@
+---
+interface Props {
+    title: String,
+    icon?: string,
+    iconAlt?: string
+}
+
+const { title, icon, iconAlt }: Props = Astro.props
+---
+
+<button>
+    <img src={icon} alt={iconAlt}>
+    {title}
+</button>
+
+<style>
+    button {
+        /* content */
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 700;
+        padding: 0.5vh 2vw;
+        /* border */
+        border: 0;
+        border-radius: 12px;
+        box-shadow: 2px 2px;
+
+        img {
+            width: 1vw;
+            height: auto;
+        }
+    }
+</style>
