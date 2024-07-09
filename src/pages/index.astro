@@ -2,27 +2,42 @@
 import Layout from '../layouts/Layout.astro'
 import CustomButton from '../components/CustomButton.astro'
 import WorkExperienceCard from '../components/WorkExperienceCard.astro'
+import { arratek, veltis } from '../assets/workExperience'
+
 ---
 
 <Layout>
 	<main>
 		<section class="welcome-and-contact">
-			<h2>Welcome to my personal page</h2>
-			<h3>Full Stack Web Developer from Bilbao</h3>
+			<h2>Soy Eneko Olabarria</h2>
+			<h3>Full Stack Web Developer desde Bilbao</h3>
 			<div class="contact-buttons">
-				<CustomButton title='Contact' icon='../../public/linkedin-icon.png' iconAlt='linkedin-logo' />
-				<CustomButton title='Linkedin' icon='../../public/linkedin-icon.png' iconAlt='linkedin-logo'/>
+				<CustomButton title='Contacto' icon='../../assets/mail.svg' iconAlt='linkedin-logo' />
+				<CustomButton title='Linkedin' icon='../../assets/linkedin.svg' iconAlt='linkedin-logo'/>
 			</div>
 		</section>
-		<section class="work-experience">
-			<h2>Work Experience</h2>
+		<section class="work-experience" id="work-experience">
+			<h2>Experiencia Laboral</h2>
 			<article>
-				<WorkExperienceCard frontmatter='./assets/work-experience/arratek.md'/>
+				<WorkExperienceCard title={arratek.title} place={arratek.place} timeline={arratek.timeline} description={arratek.description}/>
+				<WorkExperienceCard title={veltis.title} place={veltis.place} timeline={veltis.timeline} description={veltis.description}/>
 			</article>
+		</section>
+		<section class="proyects" id="proyects">
+			<h2>Proyectos</h2>
+			{/* aun no hay nada */}
+		</section>
+		<section class="about-me" id="about-me">
+			<h2>Sobre mi</h2>
+			<p>Me llamo Eneko Olabarria, empecé en la programación en 2022 tras decidir dar una vuelta a mi vida. Antes de esto había trabajado como auxiliar administrativo y desde 2019 hasta 2023 en el servicio de emergencias 112 del gobierno vasco como teleoperador.</p>
+			<p>Actualmente soy desarrollador web full-stack en una pequeña empresa local donde realizo webs y doy soporte tecnologico a pymes de la zona trabajando sobre todo con WordPress y PrestaShop.</p>
+			<p>Aunque mi introducción al mundo de la programación fue mediante un bootcamp de javascript con el tiempo he ido completando mi formación mediante cursos de distintas tecnologias como Java o PHP y en el ciclo superior de desarrollo de aplicaciones multiplataforma que estoy cursando actualmente.</p>
 		</section>
 	</main>
 </Layout>
 
 <style>
-
+	.work-experience {
+		
+	}
 </style>

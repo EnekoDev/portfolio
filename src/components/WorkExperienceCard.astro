@@ -1,15 +1,21 @@
 ---
-const { frontmatter } = Astro.props
+interface Props {
+    title: String,
+    place: String,
+    timeline: String,
+    description: String
+}
+const { title, place, timeline, description }:Props = Astro.props
 ---
 
 <div class="card-body">
     <div class="card-title-place-timeline">
-        <h3>{frontmatter.title}</h3>
-        <h4>{frontmatter.place}</h4>
-        <p>{frontmatter.timeline}</p>
+        <h3>{title}</h3>
+        <h4>{place}</h4>
+        <p>{timeline}</p>
     </div>
     <div class="card-description">
-        <p>{frontmatter.description}</p>
+        <p>{description}</p>
     </div>
 </div>
 
