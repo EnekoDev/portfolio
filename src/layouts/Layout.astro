@@ -24,7 +24,7 @@ const year = date.getFullYear()
 				<a href="#work-experience">Experiencia Laboral</a>
 				<a href="#proyects">Proyectos</a>
 				<a href="#about-me">Sobre Mi</a>
-				<a href="#">Blog</a>
+				<a href="/blog/">Blog</a>
 			</nav>
 		</head>
 		<slot />
@@ -32,10 +32,10 @@ const year = date.getFullYear()
 			<div class="footer-copyright">
 				<h6>&copy;{year} EnekoDev. Casi todos los derechos reservados.</h6>
 				<h6>Este proyecto es de codigo abierto</h6>
-				<CustomButton title='Repositorio' icon='../../assets/git.svg' iconAlt='Git logo' />
+				<CustomButton title='Repositorio' icon='../../assets/git.svg' iconAlt='Git logo' url=''/>
 			</div>
 			<div class="footer-contact">
-				<CustomButton title='Contacto' icon='../../assets/mail.svg' iconAlt='linkedin-logo' />
+				<CustomButton title='Contacto' icon='../../assets/mail.svg' iconAlt='linkedin-logo' url=''/>
 			</div>
 		</footer>
 	</body>
@@ -47,7 +47,7 @@ const year = date.getFullYear()
 		--content-background: #808080;
 	}
 	html {
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: monospace, Arial, Helvetica, sans-serif;
 		background-color: var(--page-background);
 		color: var(--font-color);
 	}
