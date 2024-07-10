@@ -3,45 +3,30 @@ interface Props {
     title: string,
     icon: string,
     iconAlt: string,
-    url: string
+    url: string,
 }
 
 const { title, icon, iconAlt, url }: Props = Astro.props
 
 ---
 
-<button aria-label={title} id={title}>
-    <img src={icon} alt={iconAlt}>
-    {title}
-</button>
-
-<script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const button = document.querySelector(`#${CSS.escape(title)}`)
-        console.log(1111111)
-        if (button) {
-            button?.addEventListener("click", () => {
-                console.log(22222222)
-                location.href = url
-            })
-        } else {
-            console.log("button not found")
-        }
-    })
-</script>
+    <a href={url} class="custom-button" target="_blank"><img src={icon} alt={iconAlt} loading="lazy"> {title}</a>
 
 <style>
-    button {
+    .custom-button {
         /* content */
         display: flex;
         align-items: center;
         gap: 6px;
         font-weight: 700;
         padding: 0.5vh 2vw;
+        text-decoration: none;
         /* border */
         border: 0;
         border-radius: 12px;
         box-shadow: 2px 2px;
+        width: fit-content;
+        background-color: var(--content-background);
         /* mouse */
         cursor: pointer;
 
@@ -50,4 +35,18 @@ const { title, icon, iconAlt, url }: Props = Astro.props
             height: auto;
         }
     }
+    a {
+        color: var(--font-color);
+    }
+    a:hover {
+            color: var(--font-color);
+        }
+
+        a:active {
+            color: var(--font-color);
+        }
+
+        a:visited {
+            color: var(--font-color);
+        }
 </style>
