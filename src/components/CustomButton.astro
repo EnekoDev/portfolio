@@ -1,34 +1,43 @@
 ---
 interface Props {
-    title: String,
-    icon?: string,
-    iconAlt?: string
+    title: string,
+    icon: string,
+    iconAlt: string,
+    url: string,
 }
 
-const { title, icon, iconAlt }: Props = Astro.props
+const { title, icon, iconAlt, url }: Props = Astro.props
+
 ---
 
-<button>
-    <img src={icon} alt={iconAlt}>
-    {title}
-</button>
+    <a href={url} class="custom-button" target="_blank"><img src={icon} alt={iconAlt} loading="lazy"> {title}</a>
 
 <style>
-    button {
+    .custom-button {
         /* content */
         display: flex;
         align-items: center;
         gap: 6px;
         font-weight: 700;
         padding: 0.5vh 2vw;
+        text-decoration: none;
         /* border */
         border: 0;
         border-radius: 12px;
-        box-shadow: 2px 2px;
+        width: fit-content;
+        background-color: var(--content-background);
+        /* mouse */
+        cursor: pointer;
 
         img {
             width: 1vw;
             height: auto;
         }
+    }
+    a, a:visited {
+        color: var(--font-color);
+    }
+    a:hover, a:active, a:focus {
+        color: gold;
     }
 </style>
