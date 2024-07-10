@@ -8,7 +8,7 @@ const arratek = {
 const veltis = {
     title: "Desarrollador Web Front-End",
     place: "Veltis Data",
-    timeline: "13/04/2023 - 12/01/2024",
+    timeline: "04/2023-01/2024",
     description: "Desarrollo Front-End con ReactJS de la plataforma online para clientes. Desarrollo de la UI mediante HTML/CSS, Bootstrap y Ant Design. Implementación de control de login con JWT. Desarrollo de mapas interactivos con Leaflet. Desarrollo de gráficos interactivos con Highcharts. Metodología de trabajo Scrum." 
 }
 

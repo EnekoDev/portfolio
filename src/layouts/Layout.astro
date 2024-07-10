@@ -11,31 +11,30 @@ const year = date.getFullYear()
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Eneko Olabarria</title>
 	</head>
 	<body>
-		<head>
-			<div class="site-title">
-				<h1>Eneko Olabarria - Full Stack Web Developer</h1>
-			</div>
+		<header class="site-head">
 			<nav class="nav-bar">
-				<a href="#work-experience">Experiencia Laboral</a>
-				<a href="#proyects">Proyectos</a>
-				<a href="#about-me">Sobre Mi</a>
+				<a href="/">Eneko</a>
 				<a href="/blog/">Blog</a>
 			</nav>
-		</head>
+			<div class="site-title">
+				<h1>Eneko Olabarria</h1>
+				<h2>Full Stack Web Dev</h2>
+			</div>
+		</header>
 		<slot />
-		<footer>
+		<footer class="footer">
 			<div class="footer-copyright">
 				<h6>&copy;{year} EnekoDev. Casi todos los derechos reservados.</h6>
-				<h6>Este proyecto es de codigo abierto</h6>
-				<CustomButton title='Repositorio' icon='src/assets/img/git.svg' iconAlt='Git logo' url='https://github.com/EnekoDev/portfolio'/>
+				<h6>Visita el código de este proyecto</h6>
+				<CustomButton title='Repositorio' icon='/src/assets/img/git.svg' iconAlt='Git logo' url='https://github.com/EnekoDev/portfolio'/>
 			</div>
 			<div class="footer-contact">
-				<CustomButton title='Contacto' icon='src/assets/img/mail.svg' iconAlt='linkedin-logo' url='mailto:enekolabdev@gmail.com' />
+				<CustomButton title='Contacto' icon='/src/assets/img/mail.svg' iconAlt='linkedin-logo' url='mailto:enekolabdev@gmail.com' />
 			</div>
 		</footer>
 	</body>
@@ -57,10 +56,37 @@ const year = date.getFullYear()
 
 <style>
 	.nav-bar {
+		/* border */
+		border: 2px solid gold;
+		border-radius: 12px;
 		background-color: var(--content-background);
+		/* content */
+		display: flex;
+		gap: 25px;
+		font-size: medium;
+		font-weight: 700;
+		/* padding, margin */
 		padding: 0.5vh 2vw;
 		width: fit-content;
-		display: flex;
-		gap: 20px;
+		height: fit-content;
+
+		/* links */
+		a, a:visited {
+        color: var(--font-color);
+		text-decoration: none;
+		}
+		a:hover, a:active, a:focus {
+			color: gold;
+		}
 	}
+
+	.footer {
+		/* margin */
+		margin: 1vh 0vw 3vh 0vw;
+		/* flexbox*/
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+	}
+
 </style>

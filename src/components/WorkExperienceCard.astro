@@ -9,7 +9,7 @@ const { title, place, timeline, description }:Props = Astro.props
 ---
 
 <div class="card-body">
-    <div class="card-title-place-timeline">
+    <div class="card-title">
         <h3>{title}</h3>
         <h4>{place}</h4>
         <p>{timeline}</p>
@@ -18,7 +18,19 @@ const { title, place, timeline, description }:Props = Astro.props
         <p>{description}</p>
     </div>
 </div>
+<div class="separation-line"></div>
 
 <style>
+    .card-body {
+        /* flexbox */
+        display: flex;
+        gap: 100px;
+        /* text */
+        text-align: justify;
+    }
 
+    .separation-line {
+        width: 10vw;
+        border-bottom: 1px solid var(--font-color);
+    }
 </style>

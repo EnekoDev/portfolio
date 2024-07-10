@@ -24,7 +24,6 @@ const { title, icon, iconAlt, url }: Props = Astro.props
         /* border */
         border: 0;
         border-radius: 12px;
-        box-shadow: 2px 2px;
         width: fit-content;
         background-color: var(--content-background);
         /* mouse */
@@ -35,18 +34,10 @@ const { title, icon, iconAlt, url }: Props = Astro.props
             height: auto;
         }
     }
-    a {
+    a, a:visited {
         color: var(--font-color);
     }
-    a:hover {
-            color: var(--font-color);
-        }
-
-        a:active {
-            color: var(--font-color);
-        }
-
-        a:visited {
-            color: var(--font-color);
-        }
+    a:hover, a:active, a:focus {
+        color: gold;
+    }
 </style>

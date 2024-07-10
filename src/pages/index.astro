@@ -9,8 +9,13 @@ import { arratek, veltis } from '../assets/workExperience'
 <Layout>
 	<main>
 		<section class="welcome-and-contact">
-			<h2>Soy Eneko Olabarria</h2>
-			<h3>Full Stack Web Developer desde Bilbao</h3>
+			<div class="welcome-nav-bar">
+				<a href="#work-experience">Experiencia Laboral</a>
+				<a href="#proyects">Proyectos</a>
+				<a href="#about-me">Sobre Mi</a>
+			</div>
+			<h2>Hola! Soy Eneko</h2>
+			<h3>Web Developer desde Bilbao</h3>
 			<div class="contact-buttons">
 				<CustomButton title='Contacto' icon='src/assets/img/mail.svg' iconAlt='linkedin-logo' url='mailto:enekolabdev@gmail.com' />
 				<CustomButton title='Linkedin' icon='src/assets/img/linkedin.svg' iconAlt='linkedin-logo' url='https://www.linkedin.com/in/eneko-olabarria-se%C3%B1oran-8b8b8015b/'/>
@@ -18,26 +23,69 @@ import { arratek, veltis } from '../assets/workExperience'
 		</section>
 		<section class="work-experience" id="work-experience">
 			<h2>Experiencia Laboral</h2>
-			<article>
+			<article class="work-experience-cards">
 				<WorkExperienceCard title={arratek.title} place={arratek.place} timeline={arratek.timeline} description={arratek.description}/>
 				<WorkExperienceCard title={veltis.title} place={veltis.place} timeline={veltis.timeline} description={veltis.description}/>
 			</article>
 		</section>
 		<section class="proyects" id="proyects">
 			<h2>Proyectos</h2>
-			{/* aun no hay nada */}
+			<div class="proyects-cards">
+				{/* aqui van los proyectos */}
+			</div>
+			<div class="github-contact">
+				<h3>Encuentra más proyectos en mi página de GitHub</h3>
+				<CustomButton title='GitHub' icon='src/assets/img/github.svg' iconAlt='GitHub logo' url='https://github.com/EnekoDev'/>
+			</div>
 		</section>
 		<section class="about-me" id="about-me">
 			<h2>Sobre mi</h2>
 			<p>Me llamo Eneko Olabarria, empecé en la programación en 2022 tras decidir dar una vuelta a mi vida. Antes de esto había trabajado como auxiliar administrativo y teleoperador.</p>
-			<p>Actualmente soy desarrollador web full-stack en una pequeña empresa local donde realizo webs y doy soporte tecnologico a pymes de la zona trabajando sobre todo con WordPress y PrestaShop.</p>
-			<p>Aunque mi introducción al mundo de la programación fue mediante un bootcamp de javascript con el tiempo he ido completando mi formación mediante cursos de distintas tecnologias como Java o PHP y en el ciclo superior de desarrollo de aplicaciones multiplataforma que estoy cursando actualmente.</p>
+            <p>Actualmente soy desarrollador web full-stack en una pequeña empresa local donde realizo webs y doy soporte tecnológico a pymes de la zona trabajando sobre todo con WordPress y PrestaShop.</p>
+            <p>Aunque mi introducción al mundo de la programación fue mediante un bootcamp de javascript con el tiempo he ido completando mi formación mediante cursos de distintas tecnologías como Java o PHP y en el ciclo superior de desarrollo de aplicaciones multiplataforma que estoy cursando actualmente.</p>
 		</section>
 	</main>
 </Layout>
 
 <style>
-	.work-experience {
-		
+	.welcome-and-contact {
+		padding-top: 1.5vh;
+
+		.contact-buttons {
+			display: flex;
+			gap: 20px;
+		}
+	}
+
+	.welcome-nav-bar {
+		/* border */
+		border-radius: 12px;
+		background-color: var(--content-background);
+		/* content */
+		display: flex;
+		gap: 25px;
+		font-size: medium;
+		font-weight: 700;
+		/* padding, margin */
+		padding: 0.5vh 2vw;
+		width: fit-content;
+
+		/* links */
+		a, a:visited {
+        color: var(--font-color);
+		text-decoration: none;
+		}
+		a:hover, a:active, a:focus {
+			color: gold;
+		}
+	}
+
+	.about-me {
+		text-align: justify;
+	}
+
+	.welcome-and-contact, .proyects, .about-me {
+		border-bottom: 1px solid gold;
+		padding: 2vh 0;
 	}
 </style>
