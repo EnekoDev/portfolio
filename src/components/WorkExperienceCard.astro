@@ -33,4 +33,10 @@ const { title, place, timeline, description }:Props = Astro.props
         width: 10vw;
         border-bottom: 1px solid var(--font-color);
     }
+
+    @media (max-width: 1080px) {
+        .card-body {
+            display: block;
+        }
+    }
 </style>
