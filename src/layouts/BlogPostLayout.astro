@@ -1,4 +1,22 @@
 ---
+import Layout from "./Layout.astro"
 
+const { frontmatter } = Astro.props
 ---
 
+<Layout>
+    <article class="blog-post">
+        <h2>{frontmatter.title}</h2>
+        <h3>{frontmatter.date}</h3>
+        <p>{frontmatter.description}</p>
+        <slot />
+    </article>
+</Layout>
+
+<style>
+    .blog-post {
+        min-height: 70vh;
+        /* font */
+        text-align: justify;
+    }
+</style>

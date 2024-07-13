@@ -1,12 +1,30 @@
 ---
+import BlogPostCard from "../components/BlogPostCard.astro";
 import Layout from "../layouts/Layout.astro";
 
-
+const posts = await Astro.glob('./content/*.md')
 ---
 
 <Layout>
     <main>
         <h2>Blog</h2>
-        <h3>Coming Soon...</h3>
+        {posts.length > 0 ? (
+            posts.map(post => (
+                <BlogPostCard 
+                title={post.frontmatter.title} 
+                date={post.frontmatter.date} 
+                description={post.frontmatter.description} 
+                url={post.url}
+                />
+            ))
+        ) : (
+            <h3>No hay posts disponibles</h3>
+        )}
     </main>
 </Layout>
+
+<style>
+    main {
+        height: auto;
+    }
+</style>
