@@ -6,7 +6,7 @@ const year = date.getFullYear()
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -29,7 +29,7 @@ const year = date.getFullYear()
 		<slot />
 		<footer class="footer">
 			<div class="footer-copyright">
-				<h6>&copy;{year} EnekoDev. Casi todos los derechos reservados.</h6>
+				<h5>&copy;{year} EnekoDev. Casi todos los derechos reservados.</h5>
 				<h6>Visita el código de este proyecto</h6>
 				<CustomButton title='Repositorio' icon='/img/git.svg' iconAlt='Git logo' url='https://github.com/EnekoDev/portfolio'/>
 			</div>
@@ -43,21 +43,27 @@ const year = date.getFullYear()
 <style is:global>
 	:root {
 		--font-color: #FFF;
-		--page-background: #111;
+		--page-background-1: #61629E;
+		--page-background-2: #9E9D61;
 		--content-background: #ADADAD;
 	}
 	html {
+		margin: 0;
+		padding: 0;
 		font-family: monospace, Arial, Helvetica, sans-serif;
-		background-color: var(--page-background);
+		background: linear-gradient(var(--page-background-1), var(--page-background-2));
 		color: var(--font-color);
-		margin: 2vh 30vw 2vh 15vw;
+	}
+	body {
+		margin: 2vh 30vw 2vh 30vw;
+		min-height: 100vh;
 	}
 </style>
 
 <style>
 	.nav-bar {
 		/* border */
-		border: 2px solid gold;
+		border: 2px solid #ffd700;
 		border-radius: 12px;
 		background-color: var(--content-background);
 		/* content */
@@ -72,7 +78,7 @@ const year = date.getFullYear()
 
 		/* links */
 		a, a:visited {
-        color: var(--font-color);
+        	color: var(--font-color);
 		text-decoration: none;
 		}
 		a:hover, a:active, a:focus {
@@ -81,7 +87,7 @@ const year = date.getFullYear()
 	}
 
 	.footer {
-		/* margin */
+		/* margin, border */
 		margin: 1vh 0vw 3vh 0vw;
 		/* flexbox*/
 		display: flex;

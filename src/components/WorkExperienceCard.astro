@@ -1,9 +1,9 @@
 ---
 interface Props {
-    title: String,
-    place: String,
-    timeline: String,
-    description: String
+    title: string,
+    place: string,
+    timeline: string,
+    description: Array<string>
 }
 const { title, place, timeline, description }:Props = Astro.props
 ---
@@ -15,18 +15,30 @@ const { title, place, timeline, description }:Props = Astro.props
         <p>{timeline}</p>
     </div>
     <div class="card-description">
-        <p>{description}</p>
+        <ul>
+            {description.map((item) => (
+                <li>{item}</li>
+            ))}
+        </ul>
     </div>
 </div>
 <div class="separation-line"></div>
 
 <style>
     .card-body {
+        /* padding */
+        padding: 1vh 0vw 1vh 0vw;
         /* flexbox */
         display: flex;
-        gap: 100px;
+        gap: 50px;
         /* text */
         text-align: justify;
+    }
+
+    .card-description {
+        li {
+            padding-bottom: 0.5vh;
+        }
     }
 
     .separation-line {
