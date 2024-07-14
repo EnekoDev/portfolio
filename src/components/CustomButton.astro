@@ -40,4 +40,21 @@ const { title, icon, iconAlt, url }: Props = Astro.props
     a:hover, a:active, a:focus {
         color: gold;
     }
+
+    @media (max-width: 1080px) {
+        .custom-button {
+            padding: 0.5vh 5vw;
+            img{
+                width: 4vw;
+                height: auto;
+            }
+        }
+    }
+
+    @media (max-width: 1500px) {
+        .custom-button img{
+            width: 2vw;
+            height: auto;
+        }
+    }
 </style>

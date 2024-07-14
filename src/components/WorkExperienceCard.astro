@@ -16,7 +16,7 @@ const { title, place, timeline, description }:Props = Astro.props
     </div>
     <div class="card-description">
         <ul>
-            {description.map((item) => (
+            {description.map((item, key) => (
                 <li>{item}</li>
             ))}
         </ul>
@@ -30,25 +30,41 @@ const { title, place, timeline, description }:Props = Astro.props
         padding: 1vh 0vw 1vh 0vw;
         /* flexbox */
         display: flex;
-        gap: 50px;
-        /* text */
-        text-align: justify;
+        justify-content: space-around;
+    }
+
+    .card-title, .card-description {
+        flex: 1; 
+        margin: 0 1vw;
+    }
+    
+    .card-title{
+        text-align: left;
     }
 
     .card-description {
+        text-align: justify;
         li {
-            padding-bottom: 0.5vh;
+            padding-bottom: 1vh;
         }
     }
 
     .separation-line {
         width: 10vw;
         border-bottom: 1px solid var(--font-color);
+        margin: 1vh 0;
     }
 
     @media (max-width: 1080px) {
         .card-body {
             display: block;
+        }
+        .card-description ul {
+            padding: 1vh 0vw;
+        }
+
+        .card-description li {
+            padding-bottom: 1vh;
         }
     }
 </style>
