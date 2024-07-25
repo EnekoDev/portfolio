@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro'
 import CustomButton from '../components/CustomButton.astro'
 import WorkExperienceCard from '../components/WorkExperienceCard.astro'
 import { arratek, veltis } from '../assets/workExperience'
+import { livechat } from '../assets/proyects'
+import ProyectCard from '../components/ProyectCard.astro'
 
 ---
 
@@ -31,7 +33,7 @@ import { arratek, veltis } from '../assets/workExperience'
 		<section class="proyects" id="proyects">
 			<h2>Proyectos</h2>
 			<div class="proyects-cards">
-				{/* aqui van los proyectos */}
+				<ProyectCard title={livechat.title} link={livechat.link} description={livechat.description} />
 			</div>
 			<div class="github-contact">
 				<h3>Encuentra más proyectos en mi página de GitHub</h3>

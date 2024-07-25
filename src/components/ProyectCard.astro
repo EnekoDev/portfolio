@@ -1,0 +1,68 @@
+---
+interface Props {
+    title: string,
+    link: string,
+    description: Array<string>
+}
+const { title, link, description }:Props = Astro.props
+---
+
+<div class="card-body">
+    <div class="card-title">
+        <h3>{title}</h3>
+        <h4>{link}</h4>
+    </div>
+    <div class="card-description">
+        <ul>
+            {description.map((item, key) => (
+                <li>{item}</li>
+            ))}
+        </ul>
+    </div>
+</div>
+<div class="separation-line"></div>
+
+<style>
+    .card-body {
+        /* padding */
+        padding: 1vh 0vw 1vh 0vw;
+        /* flexbox */
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .card-title, .card-description {
+        flex: 1; 
+        margin: 0 1vw;
+    }
+    
+    .card-title{
+        text-align: left;
+    }
+
+    .card-description {
+        text-align: justify;
+        li {
+            padding-bottom: 1vh;
+        }
+    }
+
+    .separation-line {
+        width: 10vw;
+        border-bottom: 1px solid var(--font-color);
+        margin: 1vh 0;
+    }
+
+    @media (max-width: 1080px) {
+        .card-body {
+            display: block;
+        }
+        .card-description ul {
+            padding: 1vh 0vw;
+        }
+
+        .card-description li {
+            padding-bottom: 1vh;
+        }
+    }
+</style>
