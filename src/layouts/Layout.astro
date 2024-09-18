@@ -17,10 +17,6 @@ const year = date.getFullYear()
 	</head>
 	<body>
 		<header class="site-head">
-			<nav class="nav-bar">
-				<a href="/">Porfolio</a>
-				<a href="/blog/">Blog</a>
-			</nav>
 			<div class="site-title">
 				<h1>Eneko Olabarria</h1>
 				<h2>Full Stack Web Dev</h2>
@@ -53,6 +49,7 @@ const year = date.getFullYear()
 		font-family: monospace, Arial, Helvetica, sans-serif;
 		background: linear-gradient(var(--page-background-1), var(--page-background-2));
 		color: var(--font-color);
+		scroll-behavior: smooth;
 	}
 	body {
 		margin: 2vh 30vw 2vh 30vw;
@@ -67,31 +64,6 @@ const year = date.getFullYear()
 </style>
 
 <style>
-	.nav-bar {
-		/* border */
-		border: 2px solid #ffd700;
-		border-radius: 12px;
-		background-color: var(--content-background);
-		/* content */
-		display: flex;
-		gap: 25px;
-		font-size: medium;
-		font-weight: 700;
-		/* padding, margin */
-		padding: 0.5vh 2vw;
-		width: fit-content;
-		height: fit-content;
-
-		/* links */
-		a, a:visited {
-        	color: var(--font-color);
-		text-decoration: none;
-		}
-		a:hover, a:active, a:focus {
-			color: gold;
-		}
-	}
-
 	.footer {
 		/* margin, border */
 		margin: 1vh 0vw 3vh 0vw;
