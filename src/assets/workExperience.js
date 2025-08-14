@@ -1,19 +1,20 @@
-const arratek = {
-    title: "Desarrollador Web Full Stack",
-    place: "Arratek Informática",
-    timeline: "Actualmente",
-    description: [
-        "Diseño, creación y mantenimiento web con CMS WordPress y PrestaShop", "Desarrollo webs a medida con JavaScript y PHP", "Despliegue y migración web", "Configuración de sistemas de mailing y maquetación de email para campañas de marketing y eventos mediante SMTP, AcyMailing y Mailchimp"
-    ]
-}
+const experience = [
+    {
+        title: "Desarrollador Web Full Stack",
+        place: "Arratek Informática",
+        timeline: "02-2024 - Actualmente",
+        description: [
+            "Desarrollo de multiples webs para cliente con WordPress y PrestaShop", "Desarrollo de plugins para WordPress", "Desarrollo de la aplicación web para gestión de afiliados del Sindicato Medico de Euskadi con AstroJS"
+        ]
+    },
+    {
+        title: "Desarrollador Web Front End",
+        place: "Veltis Data",
+        timeline: "04/2023 - 11/2023",
+        description: [
+            "Diseño y desarrollo Front-End con ReactJS de la plataforma online para clientes", "Desarrollo de la UI mediante HTML/CSS, Bootstrap y Ant Design", "Implementación de control de usuarios con JWT", "Desarrollo de mapas interactivos con Leaflet", "Desarrollo de gráficos interactivos con Highcharts", "Metodología de trabajo Scrum"
+        ]
+    }
+]
 
-const veltis = {
-    title: "Desarrollador Web Front End",
-    place: "Veltis Data",
-    timeline: "04/2023-01/2024",
-    description: [
-        "Diseño y desarrollo Front-End con ReactJS de la plataforma online para clientes", "Desarrollo de la UI mediante HTML/CSS, Bootstrap y Ant Design", "Implementación de control de usuarios con JWT", "Desarrollo de mapas interactivos con Leaflet", "Desarrollo de gráficos interactivos con Highcharts", "Metodología de trabajo Scrum"
-    ]
-}
-
-export { arratek, veltis }
+export { experience }
