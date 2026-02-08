@@ -1,85 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import CustomButton from '../components/CustomButton.astro'
-import WorkExperienceCard from '../components/WorkExperienceCard.astro'
-import { experience } from '../assets/workExperience'
-import { projects } from '../assets/proyects'
-import ProyectCard from '../components/ProyectCard.astro'
+import Layout from '../layouts/Layout.astro';
+import CustomButton from '../components/CustomButton.astro';
 
 ---
 
 <Layout>
 	<main>
 		<section class="welcome-and-contact">
-			<div class="welcome-nav-bar">
-				<a href="#work-experience">Experiencia Laboral</a>
-				<a href="#proyects">Proyectos</a>
-				<a href="#about-me">Sobre Mi</a>
-			</div>
-			<h2>Hola! Soy Eneko</h2>
-			<h3>Web Developer desde Bilbao</h3>
-			<h3>Actualmente no busco ofertas laborales pero estoy abierto a proyectos</h3>
+			<h2>Hi! I'm Eneko</h2>
+			<h3>Web Developer From Bilbao, Spain</h3>
+			<h3>I'm Open To Work</h3>
 			<div class="contact-buttons">
-				<CustomButton title='Contacto' icon='/img/mail.svg' iconAlt='linkedin-logo' url='mailto:enekolabdev@gmail.com' />
+				<CustomButton title='Contact' icon='/img/mail.svg' iconAlt='linkedin-logo' url='mailto:enekolabdev@gmail.com' />
 				<CustomButton title='Linkedin' icon='/img/linkedin.svg' iconAlt='linkedin-logo' url='https://www.linkedin.com/in/eneko-olabarria-se%C3%B1oran-8b8b8015b/'/>
 			</div>
 		</section>
-		<section class="work-experience" id="work-experience">
-			<h2>Experiencia Laboral</h2>
-			<article class="work-experience-cards">
-				{experience.map(item => {
-					return (
-						<WorkExperienceCard title={item.title} place={item.place} timeline={item.timeline} description={item.description}/>
-					)
-				})}
-			</article>
-		</section>
-		<section class="proyects" id="proyects">
-			<h2>Proyectos</h2>
-			<div class="proyects-cards">
-				{projects.map(item => {
-					return (
-						<ProyectCard title={item.title} link={item.link} description={item.description} />
-					)
-				})}
-			</div>
-			<div class="github-contact">
-				<h3>Encuentra más proyectos en mi página de GitHub</h3>
-				<CustomButton title='GitHub' icon='/img/github.svg' iconAlt='GitHub logo' url='https://github.com/EnekoDev'/>
-			</div>
-		</section>
-		<section class="tech-stack" id="tech-stack">
-			<h3>Stack Tecnológico</h3>
-			<article>
-				<h4>Lenguajes de Programación</h4>
-				<ul>
-					<li>JavaScript/TypeScript</li>
-					<li>PHP</li>
-					<li>Java</li>
-				</ul>
-				<h4>Frameworks</h4>
-				<ul>
-					<li>React</li>
-					<li>VueJS</li>
-					<li>AstroJS</li>
-					<li>Laravel</li>
-					<li>SpringBoot</li>
-				</ul>
-				<h4>Otras Herramientas y Tecnológias</h4>
-				<ul>
-					<li>WordPress</li>
-					<li>PrestaShop</li>
-					<li>Strapi</li>
-					<li>Docker</li>
-					<li>Git</li>
-				</ul>
-			</article>
-		</section>
-		<section class="about-me" id="about-me">
-			<h3>Sobre mí</h3>
-            <p>Me llamo Eneko Olabarria, soy desarrollador web full-stack especializado en el ecosistema JavaScript y apasionado de Linux. Disfruto creando experiencias web sencillas, rápidas e intuitivas.</p>
-            <p>Esta web es mi porfolio web donde encontraras un resumen de mi experiencia laboral, todos mis proyectos personales y lo que se me ocurra poner.</p>
-            <p>No dudes en ponerte en contacto conmigo para lo que sea y no te vayas sin echar un vistazo a mis páginas de LinkedIn y GitHub para saber más sobre mí.</p>
+		<section class="about-me">
+            <p>My name is Eneko Olabarria, I'm a web developer specialized in WordPress ecosystem. I build accesible and high-performance websites using PHP and JavaScript. I'm also pasionate about both Linux and FOSS.</p>
+            <p>This is my tiny corner of the internet where I display my proyects and adventures in the world of software development.</p>
+            <p>Get in touch with me for any question or work proposal you have, and don't forget to check out both my <a href="https://github.com/EnekoDev" target="_blank" class="about-me-link">GitHub</a> and <a href="https://www.linkedin.com/in/eneko-olabarria-se%C3%B1oran-8b8b8015b/" target="_blank" class="about-me-link">LinkedIn</a> pages.</p>
 		</section>
 	</main>
 </Layout>
@@ -87,35 +26,11 @@ import ProyectCard from '../components/ProyectCard.astro'
 <style>
 	.welcome-and-contact {
 		padding-top: 1.5vh;
-
-		.contact-buttons {
-			display: flex;
-			gap: 20px;
-		}
 	}
-
-	.welcome-nav-bar {
-		/* border */
-		border-radius: 12px;
-		background-color: var(--content-background);
-		/* content */
+	
+	.contact-buttons {
 		display: flex;
-		align-items: center;
-		gap: 3vw;
-		font-size: medium;
-		font-weight: 700;
-		/* padding, margin */
-		padding: 1vh 3vw;
-		width: fit-content;
-
-		/* links */
-		a, a:visited {
-			color: var(--font-color);
-			text-decoration: none;
-		}
-		a:hover, a:active, a:focus {
-			color: gold;
-		}
+		gap: 20px;
 	}
 
 	.about-me {
@@ -125,16 +40,5 @@ import ProyectCard from '../components/ProyectCard.astro'
 	.welcome-and-contact, .proyects, .about-me {
 		border-bottom: 1px solid gold;
 		padding: 2vh 0;
-	}
-
-	@media (max-width: 1080px) {
-		.welcome-nav-bar {
-			display: flex;
-			align-items: center;
-			text-align: center;
-			a {
-				padding-right: 3vw;
-			}
-		}
 	}
 </style>

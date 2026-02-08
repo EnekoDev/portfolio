@@ -17,21 +17,25 @@ const year = date.getFullYear()
 	</head>
 	<body>
 		<header class="site-head">
-			<div class="site-title">
-				<h1>Eneko Olabarria</h1>
-				<h2>Full Stack Web Dev</h2>
-			</div>
+			<section class="site-title">
+				<a href="/">Eneko Olabarria</a>
+				
+				<nav class="welcome-nav-bar">
+					<a href="/experience">Experience</a>
+					<a href="/projects">Projects</a>
+				</nav>
+			</section>
 		</header>
 		<slot />
 		<footer class="footer">
-			<div class="footer-copyright">
-				<h5>&copy;{year} EnekoDev. Casi todos los derechos reservados.</h5>
-				<h6>Visita el código de este proyecto</h6>
-				<CustomButton title='Repositorio' icon='/img/git.svg' iconAlt='Git logo' url='https://github.com/EnekoDev/portfolio'/>
-			</div>
-			<div class="footer-contact">
-				<CustomButton title='Contacto' icon='/img/mail.svg' iconAlt='linkedin-logo' url='mailto:enekolabdev@gmail.com' />
-			</div>
+			<section class="footer-copyright">
+				<h5>&copy;{year} Eneko Olabarria. Keep on coding space cowboy.</h5>
+				<h6>Checkout this projects repository:</h6>
+				<CustomButton title='Repository' icon='/img/git.svg' iconAlt='Git logo' url='https://github.com/EnekoDev/portfolio'/>
+			</section>
+			<section class="footer-contact">
+				<CustomButton title='Contact' icon='/img/mail.svg' iconAlt='linkedin-logo' url='mailto:enekolabdev@gmail.com' />
+			</section>
 		</footer>
 	</body>
 </html>
@@ -47,29 +51,81 @@ const year = date.getFullYear()
 		margin: 0;
 		padding: 0;
 		font-family: monospace, Arial, Helvetica, sans-serif;
-		background: linear-gradient(var(--page-background-1), var(--page-background-2));
+		background: linear-gradient(var(--page-background-1) 0% 50%, var(--page-background-2) 100%);
+		background-attachment: fixed;
 		color: var(--font-color);
 		scroll-behavior: smooth;
 	}
 	body {
-		margin: 2vh 30vw 2vh 30vw;
-		min-height: 100vh;
+		margin: 5vh 30vw 5vh 30vw;
 	}
 
 	@media (max-width: 1080px) {
 		body {
-			margin: 2vh 10vw 2vh 10vw;
+			margin: 5vh 10vw 5vh 10vw;
 		}
 	}
 </style>
 
 <style>
+	.site-title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.site-title > a {
+		text-decoration: none;
+		color: var(--font-color);
+		font-size: xx-large;
+		font-weight: 700;
+	}
+
+	.welcome-nav-bar {
+		border-radius: 12px;
+		background-color: var(--content-background);
+		display: flex;
+		align-items: center;
+		gap: 3vw;
+		font-size: medium;
+		font-weight: 700;
+		margin-left: 3vw;
+		padding: 1vh 3vw;
+		width: fit-content;
+	}
+
+	.welcome-nav-bar > a, .welcome-nav-bar > a:visited {
+		color: var(--font-color);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	.welcome-nav-bar > a:hover, .welcome-nav-bar > a:active, .welcome-nav-bar > a:focus {
+		color: gold;
+	}
+
 	.footer {
-		/* margin, border */
 		margin: 1vh 0vw 3vh 0vw;
-		/* flexbox*/
 		display: flex;
 		justify-content: space-between;
 		align-items: end;
+	}
+
+	@media (max-width: 1080px) {
+		.site-title {
+			flex-direction: column;
+		}
+
+		.welcome-nav-bar {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			margin: 2vw 0;
+			max-width: 95%;
+		}
+
+		.welcome-nav-bar > a {
+			padding-right: 3vw;
+		}
 	}
 </style>
