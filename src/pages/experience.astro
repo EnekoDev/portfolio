@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WorkExperienceCard from '../components/WorkExperienceCard.astro';
+import { experience } from '../assets/workExperience.json';
+
+---
+
+<Layout>
+    <section class="work-experience" id="work-experience">
+        <h2>Experiencia Laboral</h2>
+        <article class="work-experience-cards">
+            {experience.map(item => {
+                return (
+                    <WorkExperienceCard title={item.title} place={item.place} timeline={item.timeline} description={item.description}/>
+                )
+            })}
+        </article>
+    </section>
+</Layout>

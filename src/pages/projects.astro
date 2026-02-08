@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { projects } from '../assets/projects.json';
+import ProyectCard from '../components/ProyectCard.astro';
+import CustomButton from '../components/CustomButton.astro';
+
+---
+
+<Layout>
+    <section class="proyects" id="proyects">
+        <h2>Proyectos</h2>
+        <div class="proyects-cards">
+            {projects.map(item => {
+                return (
+                    <ProyectCard title={item.title} link={item.link} description={item.description} />
+                )
+            })}
+        </div>
+        <div class="github-contact">
+            <h3>Encuentra más proyectos en mi página de GitHub</h3>
+            <CustomButton title='GitHub' icon='/img/github.svg' iconAlt='GitHub logo' url='https://github.com/EnekoDev'/>
+        </div>
+    </section>
+</Layout>
