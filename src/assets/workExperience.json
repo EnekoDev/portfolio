@@ -1,19 +1,26 @@
 {
     "experience": [
         {
-            "title": "Desarrollador Web Full Stack",
+            "title": "Full Stack Web Developer",
             "place": "Arratek Informática",
-            "timeline": "02-2024 - Actualmente",
+            "timeline": "02-2024 - Present",
             "description": [
-                "Desarrollo de multiples webs para cliente con WordPress y PrestaShop", "Desarrollo de plugins para WordPress", "Desarrollo de la aplicación web para gestión de afiliados del Sindicato Medico de Euskadi con AstroJS"
+                "Development of multiple client websites using WordPress and PrestaShop, tailored to specific business needs",
+                "Design and development of custom WordPress themes and plugins, focusing on performance, scalability, and user experience",
+                "Development of a custom web application for managing affiliates with custom roles, personal data management and afiliates dashboard for the SME (Sindicato Médico de Euskadi), built with AstroJS"
             ]
         },
         {
-            "title": "Desarrollador Web Front End",
+            "title": "FrontEnd Web Developer",
             "place": "Veltis Data",
             "timeline": "04/2023 - 11/2023",
             "description": [
-                "Diseño y desarrollo Front-End con ReactJS de la plataforma online para clientes", "Desarrollo de la UI mediante HTML/CSS, Bootstrap y Ant Design", "Implementación de control de usuarios con JWT", "Desarrollo de mapas interactivos con Leaflet", "Desarrollo de gráficos interactivos con Highcharts", "Metodología de trabajo Scrum"
+                "Front-end design and development of the client-facing online platform using ReactJS",
+                "UI development using HTML, CSS, Bootstrap, and Ant Design, ensuring consistency and usability",
+                "Implementation of user authentication and access control using JWT (JSON Web Tokens)",
+                "Development of interactive maps using Leaflet",
+                "Creation of interactive data visualizations and charts with Highcharts",
+                "Agile development following the Scrum methodology"
             ]
         }
     ]

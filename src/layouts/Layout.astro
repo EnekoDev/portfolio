@@ -29,12 +29,12 @@ const year = date.getFullYear()
 		<slot />
 		<footer class="footer">
 			<section class="footer-copyright">
-				<h5>&copy;{year} Eneko Olabarria. Keep on coding space cowboy.</h5>
-				<h6>Checkout this projects repository:</h6>
+				<h4>&copy;{year} Eneko Olabarria. See you space cowboy.</h4>
+				<h4>Checkout this projects repository:</h4>
 				<CustomButton title='Repository' icon='/img/git.svg' iconAlt='Git logo' url='https://github.com/EnekoDev/portfolio'/>
 			</section>
 			<section class="footer-contact">
-				<CustomButton title='Contact' icon='/img/mail.svg' iconAlt='linkedin-logo' url='mailto:enekolabdev@gmail.com' />
+				<CustomButton title='Contact' icon='/img/mail.svg' iconAlt='linkedin-logo' url='mailto:hello@enekolabarria.dev' />
 			</section>
 		</footer>
 	</body>
@@ -79,6 +79,10 @@ const year = date.getFullYear()
 		color: var(--font-color);
 		font-size: xx-large;
 		font-weight: 700;
+	}
+
+	.site-title > a:hover {
+		color: gold;
 	}
 
 	.welcome-nav-bar {
