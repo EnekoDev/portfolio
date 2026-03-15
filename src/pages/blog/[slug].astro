@@ -1,38 +1,40 @@
 ---
-import { getSinglePost } from "../../libs/posts";
+import Layout from "../../layouts/Layout.astro";
+import { getPosts } from "../../libs/posts";
 import { Post } from "../../model/post";
 import type { PostData } from "../../model/types";
 
-const { slug } = Astro.params;
-const post =  new Post(0, "", false, slug ?? "", "Error obteniendo el post", "", "<p>Parece que algo ha fallado por aquí</p>");
-
-try {
-    const postData = await getSinglePost(slug ?? "error");
-    if (postData.success && postData.data) {
-        const item = Array.isArray(postData.data) ? postData.data[0] : postData.data;
-        post.id = item.id;
-        post.date = item.date;
-        post.status = item.status === "publish" ? true : false;
-        post.slug = slug ?? "";
-        post.title = item.title.rendered ?? "";
-        post.content = item.content.rendered ?? "";
-        post.excerpt = item.excerpt.rendered ?? "";
-    };
-} catch (err) {
-    console.error(err);
+export async function getStaticPaths() {
+    const postData = await getPosts();
+    if (postData.success && postData.data && Array.isArray(postData.data)) {
+        return postData.data.map((post:PostData) => ({
+            params: { slug: post.slug },
+            props: { post }
+        }));
+    }
+    return [];
 }
+
+const { post } = Astro.props;
+const content = new Post(
+    post.id,
+    post.date.substring(0, 10),
+    post.status === "publish",
+    post.slug ?? "",
+    post.title.rendered ?? "",
+    post.content.rendered ?? "",
+    post.excerpt.rendered ?? ""
+);
 ---
 
-<section>
-    <div>
-        {post ? (
-            <article id={post.slug}>
-                <h3>{post.title}</h3>
-                <h4>{post.date}</h4>
-                <p set:html={post.content} />
+<Layout>
+    <section>
+        <div>
+            <article id={content.slug}>
+                <h3>{content.title}</h3>
+                <h4>{content.date}</h4>
+                <p set:html={content.content} />
             </article>
-        ) : (
-            <h3>Post not found</h3>
-        )}
-    </div>
-</section>
+        </div>
+    </section>
+</Layout>
