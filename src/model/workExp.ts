@@ -1,4 +1,4 @@
-export class Post {
+export class WorkExp {
     id: number;
     date: string;
     status: boolean;
