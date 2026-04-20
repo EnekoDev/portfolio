@@ -1,8 +1,10 @@
 ---
-import CustomButton from "../components/CustomButton.astro"
+import CustomButton from "../components/CustomButton.astro";
 
-const date = new Date()
-const year = date.getFullYear()
+const date = new Date();
+const year = date.getFullYear();
+const currentUrl = Astro.url.pathname;
+console.log(currentUrl);
 ---
 
 <!doctype html>
@@ -21,9 +23,9 @@ const year = date.getFullYear()
 				<a href="/">Eneko Olabarria</a>
 				
 				<nav class="welcome-nav-bar">
-					<a href="/experience">Experience</a>
-					<a href="/projects">Projects</a>
-					<a href="https://blog.enekolabarria.dev">Blog</a>
+					<a href="/experience" class={currentUrl === "/experience" ? "activeUrl" : "inactiveUrl"}>Experience</a>
+					<a href="/projects" class={currentUrl === "/projects" ? "activeUrl" : "inactiveUrl"}>Projects</a>
+					<a href="https://blog.enekolabarria.dev" class="inactiveUrl">Blog</a>
 				</nav>
 			</section>
 		</header>
@@ -108,6 +110,14 @@ const year = date.getFullYear()
 		color: gold;
 	}
 
+	.activeUrl {
+		font-weight: 700;
+	}
+
+	.inactiveUrl {
+		font-weight: 500;
+	}
+
 	.footer {
 		margin: 1vh 0vw 3vh 0vw;
 		display: flex;
@@ -122,11 +132,10 @@ const year = date.getFullYear()
 
 		.welcome-nav-bar {
 			display: flex;
-			flex-direction: column;
 			align-items: center;
 			text-align: center;
 			margin: 2vw 0;
-			width:50%;
+			width:fit-content;
 		}
 	}
 </style>

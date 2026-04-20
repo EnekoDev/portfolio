@@ -17,7 +17,7 @@ interface PostData {
     };
     excerpt: {
         rendered: string
-    }
+    };
 }
 
 
